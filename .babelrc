@@ -1,0 +1,15 @@
+{
+  "presets": ["./scripts/ui-babel-preset-env", "stage-1", "react"],
+  "plugins": [
+    "transform-object-assign"
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        "transform-react-constant-elements",
+        "transform-dev-warning",
+        "transform-runtime",
+      ]
+    }
+  }
+}

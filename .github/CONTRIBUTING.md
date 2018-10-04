@@ -41,7 +41,7 @@ It would be helpful to provide a demo which can re-produce the bug 100%. Please 
 
 ## Tips about Feature Request
 
-If you believe that Ant Design Mobile should provide some features, but it does not. You could create an issue to discuss. However, Ant Design Mobile is not Swiss Army Knife, there are some features which Ant Design Mobile will not support:
+If you believe that superlative-ui should provide some features, but it does not. You could create an issue to discuss. However, superlative-ui is not Swiss Army Knife, there are some features which superlative-ui will not support:
 
 1. Request or operate data
 

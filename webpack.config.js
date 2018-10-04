@@ -5,10 +5,10 @@ const env = process.env
 
 const config = {
   mode: env.NODE_ENV ? 'production' : 'development',
-  entry: path.resolve(__dirname, 'components/index.ts'),
+  entry: path.resolve(__dirname, 'components/index.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js'
+    filename: '[name].min.js'
   },
   module: {
     rules: [{

@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "declaration": false,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "experimentalDecorators": true,
+    "allowJs": true,
+  },
+  "include": [
+    "./components/**/*"
+  ] ,
+  "exclude": [
+    "node_modules"
+  ]
+}

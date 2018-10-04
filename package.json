@@ -18,7 +18,8 @@
     "build:es": "cross-env NODE_ENV=production BABEL_ENV=es babel ./components --out-dir ./build/es",
     "build:static": "babel-node ./scripts/copy-static.js",
     "build": "yarn build:es2015 && yarn build:es2015modules && yarn build:es && yarn build:static",
-    "authors": "git log --format='%aN <%aE>' | sort -u | grep -v 'users.noreply.github.com' > AUTHORS.txt"
+    "authors": "git log --format='%aN <%aE>' | sort -u | grep -v 'users.noreply.github.com' > AUTHORS.txt",
+    "watch-tsc": "antd-tools run watch-tsc"
   },
   "license": "MIT",
   "dependencies": {
@@ -35,6 +36,7 @@
     "sinon": "^4.2.0"
   },
   "devDependencies": {
+    "antd-tools": "^5.2.1",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.1.2",

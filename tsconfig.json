@@ -3,12 +3,12 @@
     "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
-    "sourceMap": true,
+    "sourceMap": false,
     "declaration": false,
     "noImplicitAny": false,
     "removeComments": true,
     "experimentalDecorators": true,
-    "allowJs": true,
+    "allowJs": true
   },
   "include": [
     "./components/**/*"

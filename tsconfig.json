@@ -1,19 +1,18 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
+    "strictNullChecks": true,
     "moduleResolution": "node",
-    "sourceMap": false,
-    "declaration": false,
-    "noImplicitAny": false,
-    "removeComments": true,
-    "experimentalDecorators": true,
-    "allowJs": true
+    "jsx": "preserve",
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "allowSyntheticDefaultImports":true,
+    "target": "es6",
+    "noImplicitAny": true
   },
-  "include": [
-    "./components/**/*"
-  ] ,
   "exclude": [
-    "node_modules"
-  ]
+    "node_modules",
+    "lib",
+    "es"
+  ],
+  "compileOnSave": false
 }

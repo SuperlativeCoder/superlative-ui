@@ -1,54 +1,15 @@
-const path = require('path')
-const webpack = require('webpack')
-const UglifyjsPlugin = require('uglifyjs-webpack-plugin');
-const env = process.env
+const getWebpackConfig = require('antd-tools/lib/getWebpackConfig');
+const Visualizer = require('webpack-visualizer-plugin');
+const pkg = require('./package.json');
 
-const config = {
-  mode: env.NODE_ENV ? 'production' : 'development',
-  entry: path.resolve(__dirname, 'components/index.js'),
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].min.js'
-  },
-  module: {
-    rules: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      use: {
-        loader: 'babel-loader'
-      }
-    }, {
-      test: /\.ts$/,
-      exclude: /node_modules/,
-      use: {
-        loader: 'ts-loader'
-      }
-    }]
-  },
-  plugins: [
-    new webpack.LoaderOptionsPlugin({
-      options: {
-        resolve: {
-          extensions: ['', '.ts', '.tsx']
-        }
-      }
-    })
-  ],
-  //压缩js
-  optimization: {
-    minimizer: [
-      new UglifyjsPlugin({
-        uglifyOptions: {
-          compress: false
-        }
-      })
-    ]
-  },
-  resolve: {
-    extensions: ['.ts', '.tsx'] ,
-    modules: ['src' ,'node_modules']
-  } ,
-  devtool: env.NODE_ENV ? 'source-maps' : 'eval',
-}
+const webpackConfig = getWebpackConfig(false);
 
-module.exports = config
+webpackConfig.forEach((config, index) => {
+  if (index === 0) {
+    config.plugins.push(new Visualizer({
+      filename: `../ant-design-analysis/${pkg.name}@${pkg.version}-stats.html`,
+    }));
+  }
+});
+
+module.exports = webpackConfig;
